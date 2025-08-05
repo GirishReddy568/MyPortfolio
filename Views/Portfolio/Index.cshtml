@@ -1,0 +1,35 @@
+﻿@model List<MyPortfolio.Models.Project>
+@{
+    ViewData["Title"] = "Portfolio";
+}
+
+<section class="container py-5">
+    <!-- Hero Section -->
+    <div class="text-center mb-5" data-aos="fade-down">
+        <div class="col-md-12 d-flex justify-content-center align-items-center">
+            <img src="/images/projects.png" class="img-fluid rounded shadow" alt="Projects" style="min-width:250px; min-height:200px;" />
+        </div>
+
+        <h2 class="fw-bold">My Projects</h2>
+        <p class="text-muted lead">A curated list of applications I've built using .NET Core, MVC, and modern web technologies.</p>
+    </div>
+
+    <!-- Project Cards -->
+    <div class="row">
+        @foreach (var project in Model)
+        {
+            <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in">
+                <div class="card h-100 shadow border-0">
+                    <img src="@project.ImageUrl" class="card-img-top rounded-top" style="height: 200px; object-fit: cover;" alt="@project.Title" />
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-primary">@project.Title</h5>
+                        <p class="card-text text-muted">@project.Description</p>
+                    </div>
+                    <div class="card-footer bg-white border-0 text-center">
+                        <a href="/Portfolio/Details/@project.Id" class="btn btn-outline-primary btn-sm w-75">View Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

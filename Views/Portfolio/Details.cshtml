@@ -1,0 +1,35 @@
+﻿@model MyPortfolio.Models.Project
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<section class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="fade-up">
+            <div class="card shadow-lg border-0 rounded-4 p-4">
+                <div class="card-body text-center">
+
+                    <!-- Title -->
+                    <h2 class="card-title mb-4">@Model.Title</h2>
+
+                    <!-- Image -->
+                    <img src="@Model.ImageUrl" alt="@Model.Title" class="img-fluid rounded mb-4 shadow-sm" style="max-height: 400px; object-fit: cover; width: 100%;" />
+
+                    <!-- Description -->
+                    <p class="card-text text-muted fs-5">@Model.Description</p>
+
+                    <!-- Buttons -->
+                    <div class="mt-4 d-flex justify-content-center gap-3">
+                        <a class="btn btn-primary px-4" href="@Model.Link" target="_blank">
+                            <i class="bi bi-box-arrow-up-right me-1"></i> View Live Project
+                        </a>
+                        <a class="btn btn-outline-secondary px-4" href="/Portfolio">
+                            <i class="bi bi-arrow-left me-1"></i> Back to Portfolio
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
